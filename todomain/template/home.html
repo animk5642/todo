@@ -1,4 +1,8 @@
+
+
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,12 +27,15 @@
         <h3 class="pt-5 text-center">Django ToDo App</h3>
         <div class="row">
             <h4>My Day</h4>
-            <p class="text-muted">{% %}</p>
+ 
             <div class="col-md-7 col-lg-7" style="height: 450px; overflow: scroll;">
                 <!-- List of all the tasks for the day -->
+            {% for i in mytask %}
                 <div class="card m-1">
                     <div class="card-body">
-                        This is some Task
+                       
+                          {{i}}
+                      
                         <span style="position: relative; float: right;">
                             <a class="btn btn-success"><i class="fa fa-check"></i> Mark as Done</a>
                             <a class="btn btn-danger"><i class="fa fa-trash"></i></a>
@@ -36,7 +43,7 @@
                         </span>
                     </div>
                 </div>
-               
+        {% endfor %}
             </div>
             <div class="col-md-5 col-lg-5">
                 <h5>Completed Tasks</h5>
@@ -53,7 +60,7 @@
                 <!-- To Do Form -->
                 <form action="" >
                     <div class="form-group">
-                        <span style="display: flex;">
+                        <span sHTTP/1.1tyle="display: flex;">
                             <input type="text" class="form-control" placeholder="Add a task">
                             <button class="btn btn-primary" style="width: 200px;"><i class="fa fa-plus"></i> Add</button>
                         </span>
