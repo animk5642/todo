@@ -30,7 +30,7 @@
  
             <div class="col-md-7 col-lg-7" style="height: 450px; overflow: scroll;">
                 <!-- List of all the tasks for the day -->
-            {% for i in mytask %}
+            {% for i in mytask %} 
                 <div class="card m-1">
                     <div class="card-body">
                        
@@ -58,11 +58,12 @@
         <div class="row">
             <div class="col-md-6 col-lg-6 p-0" style="position: absolute; bottom: 50px;">
                 <!-- To Do Form -->
-                <form action="" >
+                <form action="{% url 'addTask' %}" method="POST">
+                    {% csrf_token %}
                     <div class="form-group">
                         <span sHTTP/1.1tyle="display: flex;">
-                            <input type="text" class="form-control" placeholder="Add a task">
-                            <button class="btn btn-primary" style="width: 200px;"><i class="fa fa-plus"></i> Add</button>
+                            <input name="task" type="text" class="form-control" placeholder="Add a task">
+                            <button type="submit" class="btn btn-primary" style="width: 200px;"><i class="fa fa-plus"></i> Add</button>
                         </span>
                     </div>
                 </form>
